@@ -1,0 +1,24 @@
+{
+  "name": "typora-theme-adwaita",
+  "version": "0.0.0",
+  "description": "A Typora theme, inspired by Gnome Adwaita",
+  "scripts": {
+    "release": "pnpm version patch && git add . && git commit -m 'v$(pnpm get version)' && git push && gh release create \"v$(pnpm get version)\" --generate-notes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaylanTatli/typora-theme-adwaita.git"
+  },
+  "author": "Taylan TATLI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aCluelessDanny/typora-theme-adwaita/issues"
+  },
+  "homepage": "https://github.com/aCluelessDanny/typora-theme-adwaita#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-zip": "^6.0.0",
+    "sass": "^1.78.0"
+  }
+}

@@ -1,0 +1,48 @@
+#typora-quick-open {
+  top: 32px;
+  width: 40%;
+  min-width: 420px;
+  transform: translateX(-50%);
+  margin-left: 0;
+
+  .mac-seamless-mode & {
+    top: 50px;
+  }
+
+  #typora-quick-open-input input {
+    border-color: $primary-color;
+  }
+
+  .ty-quick-open-category-list-inner {
+    position: relative;
+  }
+
+  .ty-quick-open-category-title {
+    height: auto;
+    padding-top: 4px;
+    padding-left: 12px;
+  }
+
+  .typora-quick-open-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2px;
+    cursor: pointer;
+
+    &:not(.active):hover {
+      background: $active-search-item-bg-color;
+    }
+    &.active:before {
+      content: "⟩";
+      position: absolute;
+      left: 8px;
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+  }
+
+  .typora-quick-open-item-path {
+    margin-top: -2px;
+  }
+}

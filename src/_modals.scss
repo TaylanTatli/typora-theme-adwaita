@@ -1,0 +1,15 @@
+.modal-content {
+  .modal-header,
+  .modal-footer {
+    border-color: $md-char-color;
+  }
+
+  input,
+  button.btn-default {
+    border-color: $md-char-color;
+  }
+
+  input {
+    background: transparent;
+  }
+}

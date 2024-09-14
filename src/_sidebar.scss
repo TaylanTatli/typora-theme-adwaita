@@ -1,0 +1,151 @@
+#typora-sidebar {
+  border-right: 1px solid $sidebar-border-color;
+  border-top: 1px solid $sidebar-border-color;
+
+  .sidebar-tabs {
+    font-family: unquote($header-font);
+    border-bottom: 1px solid $sidebar-border-color;
+  }
+
+  .file-list-item-file-name {
+    font-family: unquote($header-font);
+    font-size: 1.2em;
+  }
+
+  // Search
+  #file-library-search-input {
+    background: $sidebar-bg-color;
+  }
+
+  #file-library-search {
+    .file-list-item-file-name {
+      font-size: 1.1rem;
+    }
+
+    .ty-search-item.active {
+      background: $active-search-item-bg-color;
+    }
+  }
+
+  .file-list-item-summary,
+  .ty-search-item-line {
+    font-family: unquote($paragraph-font);
+  }
+
+  .ty-file-search-match-text,
+  .ty-outline-hit {
+    font-weight: bold;
+    background: transparent;
+  }
+
+  // Outline
+  #outline-content {
+    line-height: 1.4em;
+
+    .outline-h1 > .outline-item {
+      font-family: unquote($header-font);
+    }
+
+    @for $i from 1 through 6 {
+      .outline-h#{$i} > .outline-item {
+        padding-left: 0.75em * ($i - 1);
+      }
+    }
+
+    .outline-item:hover {
+      background: $sidebar-bg-hover-color;
+    }
+  }
+
+  .outline-title-wrapper,
+  .outline-item-wrapper.outline-h1 > .outline-item {
+    font-family: unquote($header-font);
+  }
+
+  // Node/Item
+  .file-library-node,
+  .file-library-node .file-node-background {
+    transition: background 0.4s;
+  }
+
+  .file-tree-node {
+    padding-left: 0.75em;
+
+    i,
+    span {
+      vertical-align: middle;
+    }
+
+    .file-node-icon,
+    .file-node-title {
+      margin-left: 2px;
+    }
+
+    .file-tree-node:not(.file-library-file-node) {
+      & > .file-node-content {
+        font-style: normal;
+      }
+    }
+
+    &.file-node-root > .file-node-content {
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
+
+  .file-tree-node.file-library-file-node:not(.active):hover .file-node-background,
+  .file-list-item.file-library-node:not(.active):hover {
+    background: $sidebar-bg-hover-color;
+  }
+
+  .file-tree-node.file-library-file-node.active .file-node-background,
+  .file-list-item.file-library-file-node.active {
+    border-left: 5px solid $primary-color;
+  }
+
+  // Remove blinking animation when updating filename
+  .blink-area {
+    animation: none;
+  }
+
+  // Footer
+  #ty-sidebar-footer {
+    border-top: 1px solid $sidebar-border-color;
+
+    .sidebar-footer-item {
+      transition: background 0.3s;
+
+      &:hover {
+        background: $sidebar-bg-hover-color;
+      }
+    }
+
+    // Files menu
+    #sidebar-files-menu {
+      .menuitem-group-label {
+        font-style: italic;
+      }
+
+      .show + .menuitem-group-label.show {
+        border-color: $files-menu-hover-color;
+      }
+
+      li > a:hover {
+        background: $files-menu-hover-color;
+      }
+
+      .ty-side-sort-btn {
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          color: $primary-color;
+        }
+
+        &.active {
+          background: $active-file-bg-color;
+        }
+      }
+    }
+  }
+}

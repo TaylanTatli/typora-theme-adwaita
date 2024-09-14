@@ -1,0 +1,8 @@
+# Build / generate output
+dist/*
+# Dependency directories
+node_modules/
+# Gulp #
+release/
+css/
+dist/

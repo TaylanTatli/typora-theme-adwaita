@@ -1,0 +1,103 @@
+html,
+body {
+  font-family: unquote($paragraph-font);
+}
+
+body {
+  font-size: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: unquote($header-font);
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+a {
+  color: $link-color;
+}
+
+del {
+  color: $md-char-color;
+}
+
+mark {
+  padding: 0 2px 2px;
+  background: $mark-color;
+  color: inherit;
+}
+
+blockquote {
+  position: relative;
+  margin: 1rem 0 1rem 2rem;
+  font-family: unquote($header-font);
+  color: $quote-color;
+  font-style: italic;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -2rem;
+    height: 100%;
+    width: 0.25rem;
+    background: $primary-color;
+  }
+}
+
+code,
+.md-fences,
+tt {
+  font-family: unquote($monospace-font);
+  font-size: 1rem;
+}
+
+.md-fences {
+  margin: 2em 0;
+}
+
+code {
+  font-size: 0.9em;
+  border: 1px solid $code-border-color;
+  border-radius: 0.25rem;
+  padding: 1px 0.25rem;
+  background: $code-bg-color;
+}
+
+kbd {
+  font-family: unquote($monospace-font);
+  font-size: 0.875rem;
+  border: 2px solid $code-border-color;
+  background: $kbd-bg-color;
+  color: $text-color;
+  box-shadow: none;
+}
+
+hr {
+  border-color: $md-char-color;
+}
+
+table {
+  border: 1px solid $md-char-color;
+  margin: 1rem 0;
+
+  tr:nth-child(2n) {
+    background: $accent-color;
+  }
+}
+
+thead {
+  background: $table-head-color;
+}
+
+td,
+th {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid $md-char-color;
+}

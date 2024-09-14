@@ -1,0 +1,10 @@
+#ty-spell-check-dict-missing-menu li:hover {
+  background: $dropdown-hover-bg-color !important;
+}
+
+.ty-spell-check-panel-item {
+  &.ty-active,
+  &:hover {
+    background: $dropdown-hover-bg-color !important;
+  }
+}

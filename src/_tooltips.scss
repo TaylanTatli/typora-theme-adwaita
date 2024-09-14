@@ -1,0 +1,17 @@
+.ty-tooltip {
+  background: $tooltip-bg-color;
+  color: $tooltip-text-color;
+  border-color: $tooltip-border-color;
+}
+
+.code-tooltip.md-f-tooltip {
+  &,
+  .md-arrow::after {
+    background: $footnote-tooltip-bg-color !important;
+    color: $footnote-tooltip-text-color !important;
+  }
+
+  a {
+    color: $link-color;
+  }
+}

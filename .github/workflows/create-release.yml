@@ -1,0 +1,41 @@
+name: Create Release and Build
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: gulp release
+
+      - name: Compress Directory
+        uses: somaz94/compress-decompress@v1
+        with:
+          command: compress
+          source: ./dist/adwaita
+          format: zip
+
+      - name: Check dist directory
+        run: ls dist
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/adwaita.zip
+          token: ${{ secrets.GITHUB_TOKEN }}

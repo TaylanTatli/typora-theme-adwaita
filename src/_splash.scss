@@ -1,0 +1,20 @@
+#write > p {
+  &:first-child:empty {
+    position: static;
+  }
+
+  &:only-child:empty::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("adwaita/dark.png") no-repeat 45% 90% transparent;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+}

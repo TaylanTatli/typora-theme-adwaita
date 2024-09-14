@@ -1,0 +1,28 @@
+.on-focus-mode {
+  .md-end-block:not(.md-focus):not(.md-focus-container) {
+    &,
+    *,
+    ol,
+    ul {
+      color: $md-char-color !important;
+    }
+
+    img,
+    .md-footnote,
+    .md-emoji {
+      opacity: 0.5;
+    }
+
+    mark {
+      background: $accent-color;
+    }
+  }
+
+  blockquote .md-end-block:not(.md-focus):not(.md-focus-container)::before {
+    opacity: 0.5;
+  }
+
+  li:not(.md-focus-container)::before {
+    opacity: 0.5;
+  }
+}

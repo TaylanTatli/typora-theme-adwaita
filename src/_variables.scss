@@ -1,0 +1,111 @@
+// SCSS VARIABLES //
+// Font variables
+$paragraph-font: "sans-serif";
+$header-font: "sans-serif";
+$monospace-font: "monospace";
+
+// Important colors for writing (text, links, code, etc.)
+$bg-color: #1e1e1e !default;
+$text-color: #ddd !default;
+$md-char-color: #5b5b5b !default;
+$meta-content-color: #757575 !default;
+$link-color: #6bcafb !default;
+$mark-color: #107da2eb !default;
+$quote-color: #888e9c !default;
+$code-bg-color: #282a36 !default;
+$code-border-color: #ffffff26 !default;
+$kbd-bg-color: #282a36 !default;
+$selected-text-bg-color: #285194 !default;
+
+// Button and table colors
+$primary-color: #428bca !default;
+$primary-btn-border-color: #285e8e !default;
+$accent-color: #3c3c3c !default;
+$table-head-color: #4d4d4d !default;
+
+// Active and hover colors
+$active-file-bg-color: #1b1b1d !default;
+$active-search-item-bg-color: #212121 !default;
+$item-hover-bg-color: #2e2e2e !default;
+$item-hover-text-color: #fff !default;
+
+// Sidebar colors
+$sidebar-bg-color: #303030 !default;
+$sidebar-bg-hover-color: $bg-color !default;
+$sidebar-border-color: #3e3e3e !default;
+$sidebar-text-color: $text-color !default;
+$search-hit-bg-color: #428bca40 !default;
+$search-select-bg-color: #428bca90 !default;
+$files-menu-hover-color: $bg-color !default;
+
+// Info panel colors
+$info-panel-active-tab-color: #444444 !default;
+
+// Tooltip and footnote colors
+$tooltip-bg-color: $sidebar-bg-color !default;
+$tooltip-text-color: $text-color !default;
+$tooltip-border-color: #00000040 !default;
+$footnote-sup-bg-color: #111 !default;
+$footnote-tooltip-bg-color: #111 !default;
+$footnote-tooltip-text-color: $text-color !default;
+
+// Dropdown and footer colors
+$dropdown-bg-color: $sidebar-bg-color !default;
+$dropdown-hover-bg-color: $bg-color !default;
+$dropdown-divider-color: $bg-color !default;
+$footer-hover-color: $sidebar-bg-color !default;
+
+// Megamenu colors
+$megamenu-bg-color: $sidebar-bg-color !default;
+$megamenu-text-color: $text-color !default;
+$megamenu-hover-bg-color: #222 !default;
+$megamenu-active-bg-color: #181818 !default;
+$megamenu-sidebar-bg-color: $bg-color !default;
+$megamenu-sidebar-hover-bg-color: #161819 !default;
+$megamenu-sidebar-active-bg-color: #101010 !default;
+$megamenu-button-border-color: #9292928f !default;
+
+// Mermaid diagram colors
+$mermaid-node-fill: $bg-color !default;
+$mermaid-node-border: $code-border-color !default;
+$mermaid-task-fill: #8a88c9 !default;
+$mermaid-task-border: #5f5caf !default;
+$mermaid-task-done-fill: #6b6b6b !default;
+$mermaid-task-done-border: #3d3d3d !default;
+$mermaid-task-active-fill: #737cff !default;
+$mermaid-task-active-border: #413da0 !default;
+$mermaid-task-crit-fill: #d66979 !default;
+$mermaid-task-crit-border: #8f1d22 !default;
+
+// ROOT VARIABLES //
+
+:root {
+  --bg-color: #{$bg-color}; // background color
+  --text-color: #{$text-color}; // text color
+  --md-char-color: #{$md-char-color}; // color of meta characters (i.e. `*` in markdown)
+  --meta-content-color: #{$meta-content-color}; // color of meta contents (i.e. image text or link address in markdown)
+  --table-border-color: #{$md-char-color}; // color of table cell borders
+  --select-text-bg-color: #{$selected-text-bg-color}; // background color for selected text
+
+  --primary-color: #{$primary-color}; // primary color
+  --primary-btn-border-color: #{$primary-btn-border-color}; // primary color for button borders
+  --primary-btn-text-color: #{$text-color}; // text color for buttons
+
+  --window-border: 1px solid #{$active-file-bg-color}; // border color for window and sidebar
+
+  --active-file-bg-color: #{$active-file-bg-color}; // background color for active file in sidebar
+  --active-file-text-color: inherit; // text color for selected file
+  --active-file-border-color: #{$meta-content-color}; // border color for selected file
+  --active-search-item-bg-color: #{$active-search-item-bg-color}; // background color for active search item
+
+  --side-bar-bg-color: #{$sidebar-bg-color}; // sidebar background color
+  --item-hover-bg-color: #{$item-hover-bg-color}; // background color of control items when hovering
+  --item-hover-text-color: #{$item-hover-text-color}; // text color upon hovering over menu items
+  --search-select-text-color: #{$text-color}; // text color for selected searched text
+  --search-select-bg-color: #{$search-select-bg-color}; // background color for selected searched text
+  --rawblock-edit-panel-bd: #{$accent-color}; // background color for inline HTML 'edit panel' blocks
+  --monospace: #{$monospace-font}; // monospace font for code
+
+  --node-fill: #{$mermaid-node-fill}; // Mermaid node fill color
+  --node-border: #{$mermaid-node-border}; // Mermaid node border
+}

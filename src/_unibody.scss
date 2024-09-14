@@ -1,0 +1,138 @@
+// Windows Unibody
+footer.ty-footer {
+  border-top: 0;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+  background: $bg-color;
+}
+
+.footer-item:hover {
+  background: $footer-hover-color !important;
+}
+
+#outline-btn:hover {
+  color: inherit;
+}
+
+.form-control:focus {
+  border-color: $primary-color;
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 2px $primary-color;
+}
+
+// Windows Unibody megamenu
+.megamenu-opened header {
+  background-image: none;
+}
+
+#top-titlebar {
+  &,
+  * {
+    color: inherit;
+  }
+}
+
+#megamenu-content {
+  padding-top: 28px;
+  background: $megamenu-bg-color;
+  color: $megamenu-text-color;
+
+  .long-btn {
+    border-color: $megamenu-button-border-color;
+    transition: border-color 0.4s;
+
+    &:hover {
+      border-color: $primary-color;
+      background: $megamenu-hover-bg-color;
+      color: $item-hover-text-color !important;
+    }
+  }
+}
+
+#megamenu-menu-panel:not(:first-of-type) {
+  margin-top: 48px;
+}
+
+#recent-file-panel-action-btn {
+  background: inherit;
+  border-color: $megamenu-button-border-color;
+  transition: all 0.4s;
+
+  &:hover {
+    border-color: $primary-color;
+    background: $megamenu-hover-bg-color;
+    color: $item-hover-text-color;
+  }
+}
+
+#recent-document-table {
+  background-color: inherit;
+}
+
+#recent-file-panel tbody tr {
+  &:nth-child(2n-1) {
+    background-color: inherit;
+  }
+
+  &:hover {
+    background-color: $megamenu-hover-bg-color !important;
+  }
+
+  &:hover td:nth-child(1) {
+    color: $item-hover-text-color;
+  }
+}
+
+// Windows Unibody sidebar
+#megamenu-menu-sidebar {
+  background-color: $megamenu-sidebar-bg-color;
+  color: $text-color;
+}
+
+.megamenu-menu-header,
+.megamenu-menu-list li:not(.saved) a {
+  transition: all 0.4s;
+}
+
+.megamenu-menu-header {
+  border-bottom: 1px solid $active-file-bg-color;
+
+  &:hover {
+    background: $megamenu-sidebar-hover-bg-color;
+  }
+}
+
+.megamenu-menu-list li {
+  &:not(.saved) a:not(.active):hover,
+  a.active {
+    background: $megamenu-sidebar-active-bg-color !important;
+  }
+}
+
+#m-saved {
+  background: inherit;
+  color: inherit;
+}
+
+#megamenu-menu-list {
+  margin: 0;
+}
+
+.theme-preview-div {
+  transition: all 0.4s;
+
+  &:hover {
+    border: 4px solid $primary-btn-border-color;
+  }
+
+  &.active,
+  &.active:hover {
+    border: 4px solid $primary-color;
+  }
+
+  &.active i {
+    color: $primary-color;
+  }
+}

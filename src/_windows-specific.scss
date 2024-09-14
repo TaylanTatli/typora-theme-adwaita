@@ -1,0 +1,19 @@
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) {
+  background: $dropdown-bg-color;
+  color: $text-color;
+
+  .divider {
+    border-color: $dropdown-divider-color;
+  }
+
+  .active a,
+  .has-extra-menu.active a {
+    background: $dropdown-hover-bg-color !important;
+  }
+
+  .has-btn-submenu .menu-style-btn.active {
+    background: $text-color;
+    color: $dropdown-bg-color;
+    cursor: pointer;
+  }
+}

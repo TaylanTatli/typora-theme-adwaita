@@ -1,0 +1,31 @@
+#header {
+  border-top: 1px solid $sidebar-border-color;
+}
+header {
+  border-top: 1px solid $sidebar-border-color;
+}
+.native-window .info-panel-tab {
+  margin: 0.25rem 0;
+}
+.info-panel-tab-wrapper {
+  height: unset;
+  border-bottom: 1px solid $sidebar-border-color;
+  margin-top: 0;
+}
+.info-panel-tab {
+  padding: 0.5rem;
+  width: 45%;
+}
+.info-panel-tab-title {
+  padding-bottom: 0;
+}
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border {
+  height: 0;
+}
+.active-tab-files #info-panel-tab-file,
+.active-tab-outline #info-panel-tab-outline {
+  background-color: $info-panel-active-tab-color;
+  border-radius: 0.35rem;
+}

@@ -1,0 +1,58 @@
+.ty-preferences {
+  // Window
+  .window {
+    background: $megamenu-bg-color;
+  }
+
+  // Navbar items
+  .nav-group-item {
+    background: transparent;
+    color: $megamenu-text-color;
+    cursor: pointer;
+
+    &:not(.active):hover {
+      background: $megamenu-hover-bg-color;
+      color: inherit;
+    }
+
+    &:active,
+    &.active {
+      background: $megamenu-active-bg-color;
+      color: inherit;
+    }
+  }
+
+  // Buttons
+  .btn-default {
+    background: transparent;
+    color: inherit;
+    border-color: $megamenu-button-border-color;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $primary-color;
+      background: $megamenu-hover-bg-color !important;
+      color: $item-hover-text-color;
+    }
+
+    &:active,
+    &.active {
+      background: $megamenu-active-bg-color;
+    }
+  }
+
+  // Dropdown lists
+  select,
+  ul.dropdown-menu {
+    border-color: $megamenu-button-border-color;
+    background: $megamenu-bg-color;
+  }
+
+  ul.dropdown-menu li {
+    background: $megamenu-bg-color;
+
+    &:hover {
+      background: $megamenu-hover-bg-color;
+    }
+  }
+}

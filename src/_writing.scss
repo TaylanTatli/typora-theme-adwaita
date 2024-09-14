@@ -1,0 +1,425 @@
+#write {
+  position: static;
+  width: 90%;
+  max-width: 700px;
+  line-height: 1.6;
+
+  transform: none; // Windows-specific fix
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  pre {
+    width: auto;
+  }
+
+  // Headers
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &::before {
+      position: absolute;
+      left: auto;
+      right: calc(100% + 0.75em);
+      top: 0;
+      color: $md-char-color;
+      font-size: 1rem;
+      font-weight: bold;
+      font-variant: "small-caps";
+    }
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+
+    &::before {
+      content: "H1";
+      top: 0.87rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin: 0.7rem 0;
+
+    &::before {
+      content: "H2";
+      top: 0.43rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+
+    &::before {
+      content: "H3";
+      top: 0.2rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    margin: 0.2rem 0;
+
+    &::before {
+      content: "H4";
+      top: 0.07rem;
+    }
+  }
+
+  h5,
+  h6 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  h5::before {
+    content: "H5";
+  }
+
+  h6::before {
+    content: "H6";
+  }
+
+  > h1.md-focus::before,
+  > h2.md-focus::before,
+  > h3.md-focus::before,
+  > h4.md-focus::before,
+  > h5.md-focus::before,
+  > h6.md-focus::before {
+    color: $meta-content-color;
+    padding: 0;
+    border: 0;
+    line-height: inherit;
+  }
+
+  // Lists
+  ol,
+  ul {
+    padding-left: 2rem;
+    margin: 0.5rem 0;
+
+    > li {
+      color: $primary-color;
+      font-weight: bold;
+
+      > * {
+        color: $text-color;
+        font-weight: normal;
+      }
+
+      > *:not(ol):not(ul) {
+        padding-left: 0.25rem;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  // Checklists
+  .md-task-list-item {
+    $transition-duration: 0.3s;
+
+    > input {
+      -webkit-appearance: initial;
+      appearance: initial;
+      display: block;
+      position: absolute;
+      border: 1px solid $md-char-color;
+      border-radius: 0.25rem;
+      margin-top: 0.1rem;
+      margin-left: -1.8rem;
+      height: 1.2rem;
+      width: 1.2rem;
+      transition: background $transition-duration;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      &:hover {
+        background: $accent-color;
+      }
+
+      &[checked]::before {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        height: 60%;
+        width: 2px;
+        transform: rotate(40deg);
+        background: $text-color;
+      }
+
+      &[checked]::after {
+        content: "";
+        position: absolute;
+        top: 46%;
+        left: 25%;
+        height: 30%;
+        width: 2px;
+        transform: rotate(-40deg);
+        background: $text-color;
+      }
+    }
+
+    > p {
+      transition:
+        color $transition-duration,
+        opacity $transition-duration;
+    }
+
+    &.task-list-done > p {
+      color: $md-char-color;
+      text-decoration: line-through;
+
+      > .md-emoji {
+        opacity: 0.5;
+      }
+
+      > .md-link > a {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  // YAML
+  .md-meta-block {
+    background-color: transparent;
+    border-bottom: 1px solid $md-char-color;
+    padding-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  // Table toolbar
+  .md-table-edit {
+    border-top: 1px solid $md-char-color;
+    margin-top: -29px !important;
+    padding: 3px 0;
+  }
+
+  .md-grid-board {
+    a {
+      &.md-active,
+      &:hover {
+        background: $primary-color;
+        color: $md-char-color;
+      }
+    }
+
+    tr[row="1"] a {
+      &.md-active,
+      &:hover {
+        background: $primary-btn-border-color;
+        color: $md-char-color;
+      }
+    }
+  }
+
+  .btn-group .btn + .btn {
+    margin-left: 0;
+  }
+
+  .btn-default {
+    &.active,
+    &.focus,
+    &:active,
+    &:focus,
+    &:hover,
+    .open > &.dropdown-toggle {
+      background: transparent;
+      color: inherit;
+    }
+  }
+
+  // Table drag areas
+  .typora-table-drag-area {
+    &::after {
+      content: "";
+      position: absolute;
+      border: 2px solid $text-color;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    #typora-table-row-tracker &::after,
+    #typora-table-col-tracker &::after {
+      opacity: 1;
+    }
+
+    #typora-table-row-tracker &::after {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 100%;
+    }
+
+    #typora-table-col-tracker &::after {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 0;
+    }
+  }
+
+  // Table of contents
+  .md-toc-tooltip {
+    z-index: 10;
+  }
+
+  .md-toc-item {
+    font-size: 1.1rem;
+    color: var(--primary-btn-border-color);
+  }
+
+  .md-toc-h1 {
+    font-family: unquote($header-font);
+    font-size: 1.3rem;
+  }
+
+  .md-toc-h2 {
+    font-size: 1.2rem;
+  }
+
+  // Footnotes
+  .md-footnote {
+    font-family: unquote($header-font);
+    font-size: 0.8em;
+    border: 1px solid $accent-color;
+    padding: 0 4px;
+    background: $footnote-sup-bg-color;
+    color: $text-color;
+  }
+
+  .md-def-split {
+    min-width: 1ch;
+  }
+
+  .md-def-name {
+    &::before,
+    &::after {
+      color: $meta-content-color;
+    }
+  }
+
+  // Image meta text
+  .md-image > .md-meta {
+    color: $meta-content-color;
+  }
+
+  // Inline styles
+  .md-rawblock-tooltip {
+    top: -1.5rem;
+    height: 1.5rem;
+    padding: 0.25rem;
+  }
+
+  // Search results
+  .md-search-hit {
+    background: $search-hit-bg-color;
+    border-radius: 0.125rem;
+  }
+
+  .md-search-select {
+    background: $search-select-bg-color;
+    border: 1px solid $megamenu-button-border-color;
+    padding: 0 1px;
+  }
+
+  // Mermaid diagrams
+  pre[lang="mermaid"] {
+    .md-diagram-panel {
+      border-color: $code-border-color;
+    }
+
+    tspan {
+      fill: $text-color;
+    }
+
+    // Mermaid graphs diagrams
+    &[mermaid-type="graph"] {
+      path.path {
+        & ~ defs marker {
+          fill: $text-color;
+        }
+      }
+
+      .cluster rect {
+        fill: transparent !important;
+        stroke: $mermaid-node-border !important;
+      }
+    }
+
+    // Mermaid Gantt diagrams
+    &[mermaid-type="gantt"] {
+      // NOTE: Not the best, but I can't target with :nth-child(2n)
+      @for $i from 1 to 20 {
+        .section#{$i} {
+          @if $i % 2 == 0 {
+            fill: $accent-color;
+          } @else {
+            fill: transparent;
+          }
+        }
+      }
+
+      .task {
+        fill: $mermaid-task-fill;
+        stroke: $mermaid-task-border;
+
+        &[class*="done"] {
+          fill: $mermaid-task-done-fill;
+          stroke: $mermaid-task-done-border;
+        }
+
+        &[class*="active"] {
+          fill: $mermaid-task-active-fill;
+          stroke: $mermaid-task-active-border;
+        }
+
+        &[class*="crit"] {
+          fill: $mermaid-task-crit-fill;
+          stroke: $mermaid-task-crit-border;
+        }
+
+        &[class*="Crit"] {
+          stroke: $mermaid-task-crit-border;
+        }
+      }
+
+      text {
+        fill: $text-color;
+
+        &[class*="activeText"],
+        &[class*="activeCritText"] {
+          fill: $text-color !important;
+          font-weight: bold;
+        }
+
+        &[class*="doneText"],
+        &[class*="doneCritText"] {
+          fill: $md-char-color !important;
+        }
+      }
+
+      .grid .tick line {
+        stroke: $text-color;
+      }
+    }
+  }
+}

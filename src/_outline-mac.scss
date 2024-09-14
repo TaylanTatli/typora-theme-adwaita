@@ -1,0 +1,14 @@
+#toc-dropmenu {
+  padding: 0.25em 0;
+  background: $bg-color;
+
+  // Disable the divider
+  .outline-title-divider {
+    display: none;
+  }
+}
+
+// Disable underlining in outline items
+.outline-label:hover {
+  text-decoration: none;
+}
