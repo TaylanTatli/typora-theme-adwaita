@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A Typora theme, inspired by Gnome Adwaita",
   "scripts": {
-    "release": "pnpm version patch && git add . && git commit -m 'v$(pnpm get version)' && git push && gh release create \"v$(pnpm get version)\" --generate-notes"
+    "release": "pnpm version patch && git add . && git commit -m 'v$(pnpm get version)' && git push origin tag \"v$(pnpm get version)\""
   },
   "repository": {
     "type": "git",
