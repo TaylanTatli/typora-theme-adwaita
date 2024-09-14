@@ -1,6 +1,6 @@
 {
   "name": "typora-theme-adwaita",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Typora theme, inspired by Gnome Adwaita",
   "scripts": {
     "release": "pnpm version patch && git add . && git commit -m 'v$(pnpm get version)' && git push && gh release create \"v$(pnpm get version)\" --generate-notes"
